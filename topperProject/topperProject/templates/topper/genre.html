@@ -1,0 +1,42 @@
+{% extends 'bootstrap/base_boot-strap.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+	Genre
+{% endblock %}
+
+{% block body_block %}
+<br/>
+	<h1>Genres</h1>
+		
+		<div>
+		<h4><u>Top Genres</u></h4>
+		{% if genres %}
+		<ol>
+			{% for genre in genres %}
+				<li>
+				<a href={% url 'show_genre' genre.slug %}>{{ genre.genreName }}</a>
+				</li>
+			{% endfor %}
+		</ol>
+		{% else %}
+			There are no top genres.
+		{% endif %}
+		</div>
+		</br>
+		
+		<div>
+		<h4><u>A-Z Genres</u></h4>
+		{% if genres %}
+		<ul>
+			{% for genre in AZgenres %}
+				<li>
+				<a href={% url 'show_genre' genre.slug %}>{{ genre.genreName }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+		{% else %}
+			There are no genres present.
+		{% endif %}
+		</div>
+{% endblock %}

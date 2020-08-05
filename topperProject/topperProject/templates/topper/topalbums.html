@@ -1,0 +1,64 @@
+{% extends 'bootstrap/base_boot-strap.html' %}
+{% load staticfiles %}
+
+
+{% block title_block %}
+	Top Albums
+{% endblock %}
+
+{% block body_block %}
+	<br/>
+	<h1>Albums</h1>
+		<div>
+		<strong>{{ boldmessage }}</strong><br />
+		
+		{% if topalbums %}
+		<ol>
+			{% for album in topalbums %}
+				<li>
+				<a href={% url 'show_albums' album.slug %}>{{ album.title }}</a>
+				</li>
+			{% endfor %}
+		</ol>
+		{% else %}
+			There are no top albums.
+		{% endif %}
+		</div>
+		</br>
+
+		
+		
+		</div>
+		<div>
+		<h4><u>A-Z Albums</u></h4>
+		{% if AZalbums %}
+		<ul>
+			{% for album in AZalbums %}
+				<li>
+				<a href={% url 'show_albums' album.slug %}>{{ album.title }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+		{% else %}
+			There are no albums present.
+		{% endif %}
+		</div>
+{% endblock %}
+
+<!--<div class="dropdown">
+			<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Month</button>
+			<ul class="dropdown-menu">
+				<li><a href="#">January</a></li>
+				<li><a href="#">February</a></li>
+				<li><a href="#">March</a></li>
+				<li><a href="#">April</a></li>
+				<li><a href="#">May</a></li>
+				<li><a href="#">June</a></li>
+				<li><a href="#">July</a></li>
+				<li><a href="#">August</a></li>
+				<li><a href="#">September</a></li>
+				<li><a href="#">October</a></li>
+				<li><a href="#">November</a></li>
+				<li><a href="#">December</a></li>
+			</ul>-->
+>>>>>>> 4ef0d2d848fe9d09278b642aa068f674fbb0dda2

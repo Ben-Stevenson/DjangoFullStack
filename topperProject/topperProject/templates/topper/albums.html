@@ -1,0 +1,11 @@
+<ul class="nav nav-pills flex-column">
+{% if albums %}
+	{% for a in albums %}
+		{% if a == act_Albums %}
+			<li class="nav-item"><strong><a href="{% url 'show_albums' a.slug %}">{{ a.title }}</a></strong></li>
+		{% else %}
+			<li class="nav-item"><a href="{% url 'show_albums' a.slug %}">{{ a.title }}</a></li>
+		{% endif %}
+	{% endfor %}
+{% endif %}
+</ul>

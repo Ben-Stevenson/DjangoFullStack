@@ -1,0 +1,115 @@
+{% extends 'bootstrap/base_boot-strap.html' %}
+{% load staticfiles %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://v4-alpha.getbootstrap.com/favicon.ico">
+
+    <title>Topper</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
+  </head>
+  {% block body_block %}
+
+        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-0 pt-4">
+          <h1>Recently Viewed Albums</h1>
+
+		  
+		  <br/>
+          <section class="row text-center placeholders">
+		  <br/>
+            <div class="col-6 col-sm-3 placeholder">
+				<a href="https://www.youtube.com/watch?v=YQHsXMglC9A&list=RDQMa7RtMP0kCR0">
+				<img id="album1"  src="{% static "images/25-adele.png" %}" width="200" height="200" class="img-fluid rounded-circle" alt="25-adele">
+				<h4>Adele</h4>
+				</a>
+				<div class="text-muted">25</div>
+            </div>
+            <div class="col-6 col-sm-3 placeholder">
+				<a href="https://www.youtube.com/watch?v=L3wKzyIN1yk&list=PLxKHVMqMZqUToY9Kx8X4MjcCNdAPjFlYB">
+				<img id="album2" src="{% static "images/human-ragnboneman.png" %}" width="200" height="200" class="img-fluid rounded-circle" alt="human-ragnboneman">
+				<h4>Rag'n'Boneman</h4>
+				</a>
+				<div class="text-muted">Human</div>
+				
+            </div>
+            <div class="col-6 col-sm-3 placeholder">
+				<a href = "https://www.youtube.com/watch?v=gM89Q5Eng_M&list=PLxKHVMqMZqUSPF11Ghs0KqDfOGhB9Vw5E">
+				<img id="album3" src="{% static "images/lemonade-beyonce.png" %}" width="200" height="200" class="img-fluid rounded-circle" alt="lemonade-beyonce">
+				</a>
+				<h4>Beyonce</h4>
+				
+				<span class="text-muted">Lemonade</span>
+            </div>
+            <div class="col-6 col-sm-3 placeholder">
+				<a href = "https://www.youtube.com/watch?v=gM89Q5Eng_M&list=PLxKHVMqMZqUSPF11Ghs0KqDfOGhB9Vw5E">
+				<img id="album4" src="{% static "images/views-drake.jpg" %}" width="200" height="200" class="img-fluid rounded-circle" alt="views-drake">
+				<h4>Drake</h4>
+				</a>
+              <span class="text-muted">Views</span>
+            </div>
+          </section>
+		  {% if user.is_authenticated %}
+		  <a href="{% url 'add_album' %}" class="btn btn-primary" id="needsmargin" role="button">Add Album</a>
+		  {% endif %}
+		  <br/>
+          <h2 id="needsmargin">Most Recent Reviews</h2>
+          <div class="table-responsive ml-1">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+					<th>Picture</th>
+					<th>User</th>
+					<th>Review</th>
+					<th>Album</th>
+					<th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+					<td><img src="{% static "images/user1.jpg" %}" width="50" height="50" alt="user1_profilepic" /></td>
+					<td>conall</td>
+					<td>Pretty good</td>
+					<td>25-Adele</td>
+					<td>21/03</td>
+                </tr>
+                <tr>
+					<td><img src="{% static "images/ewan user.jpg" %}" width="50" height="50" alt="user2_profilepic" /></td>
+					<td>Ewan</td>
+					<td>sooo siiiick m9</td>
+					<td>Lemonade-Beyonce</td>
+					<td>21/03</td>
+                </tr>
+                <tr>
+                  <td><img src="{% static "images/ben user.jpg" %}" width="50" height="50" alt="user3_profilepic" /></td>
+                  <td>Ben</td>
+                  <td>Wicked</td>
+				  <td>Views-Drake</td>
+                  <td>21/03</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+	{% endblock %}
+	
+	    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="http://v4-alpha.getbootstrap.com/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="http://v4-alpha.getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="http://v4-alpha.getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+{% extends 'bootstrap/base_boot-strap.html' %}
+{% load staticfiles %}
+
+
+{% block title_block %}
+	{{ genre.genreName }}
+{% endblock %}
+
+{% block body_block %}
+{ albums.title }
+	<h1>{{ genre.genreName }}</h1>
+		<div>
+			<br />Albums:
+		</div>
+		<div>
+		{% for addAlbum in albums %}
+			<li>
+				<a href={% url 'show_albums' addAlbum.slug %}>{{ addAlbum.title }}</a>
+			</li>
+		{% endfor %}
+		</div>
+		
+{% endblock %}

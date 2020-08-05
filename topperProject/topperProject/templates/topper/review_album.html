@@ -1,0 +1,25 @@
+{% extends 'bootstrap/base_boot-strap.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Review Album
+{% endblock %}
+
+{% block body_block %}
+		<br/>
+        <h1>Add a Review</h1>
+        <div>
+            <form id="Review_form" method="post" action="/topperApp/reviews/">
+                {% csrf_token %}
+                {% for hidden in form.hidden_fields %}
+                    {{ hidden }}
+                {% endfor %}
+                {% for field in form.visible_fields %}
+                    {{ field.errors }}
+                    {{ field.help_text }}
+                    {{ field }}
+                {% endfor %}
+                <input type="submit" name="submit" value="Create Review" />
+            </form>
+        </div>
+{% endblock %}

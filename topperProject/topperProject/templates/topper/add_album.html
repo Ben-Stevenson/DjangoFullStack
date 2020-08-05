@@ -1,0 +1,29 @@
+{% extends 'bootstrap/base_boot-strap.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Add an Album
+{% endblock %}
+
+{% block body_block %}
+		<br/>
+        <h1>Add an Album</h1>
+        <div>
+			<b>Enter your own and/or favourite albums below</b><br />
+            <form enctype="multipart/form-data" id="Album_form" method="post" action="/topperApp/add_album/">
+
+                {% csrf_token %}
+                {% for hidden in form.hidden_fields %}
+                    {{ hidden }}
+                {% endfor %}
+                {% for field in form.visible_fields %}
+                    {{ field.errors }}
+                    {{ field.help_text }}
+                    {{ field }}
+					<br/>
+					<br/>
+                {% endfor %}
+                <input type="submit" name="submit" value="Add Album" />
+            </form>
+        </div>
+{% endblock %}

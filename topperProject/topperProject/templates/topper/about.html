@@ -1,0 +1,64 @@
+{% extends 'bootstrap/base_boot-strap.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+	About
+{% endblock %}
+<style type="text/css">
+.tile_div{
+    text-align: center;
+    width: 100%;
+}
+
+.tile_table{
+    border-collapse:collapse;
+}
+
+.tile_table tr, td{
+}
+
+.tile_image{
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 5px;
+}
+</style>
+{% block body_block %}
+<br />
+<br />
+<h1>The team!</h1>
+
+<br />
+<br />
+<div align="left" class="tile_div">
+	<table class="tile_table">
+	<tr>
+		<td>
+			<img class="tile_image" height="60px" width="60px" src="{% static "images/blank user.jpg" %}"/> 
+			<u><p class="tile_p">Ruwaid</p></u>
+			Ruwaid was massively involved in the main functionality of the website dealing with Views, models, search function
+
+		</td>
+	</tr>
+		<td>
+			<img class="tile_image" height="60px" width="60px" src="{% static "images/blank user.jpg" %}"/> 
+			<u><p class="tile_p">Conall</p></u>
+			Conall was the main man when it came to design. He created the bootstrap for the website, the urls and presentation
+			
+		</td>
+	</tr>
+		<td>
+			<img class="tile_image" height="60px" width="60px" src="{% static "images/ben user.jpg" %}"/> 
+			<u><p class="tile_p">Ben</p></u>
+			Ben was involved primarily with Html templates, login functionality, urls, views
+			
+		</td>
+	</tr>
+		<td>
+			<img class="tile_image" height="60px" width="60px" src="{% static "images/ewan user.jpg" %}"/> 
+			<u><p class="tile_p">Ewan</p></u>
+			Ewan helped create the Genre page, forms and populated the website with his extensive knowledge of music.
+
+		</td>
+	</tr>
+</table>
+{% endblock %}
